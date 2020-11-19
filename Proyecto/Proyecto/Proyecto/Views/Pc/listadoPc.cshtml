@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Proyecto.Models.Pc>
+
+@{
+    ViewBag.Title = "listadoPc";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<h2>LISTA DE PC'S</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.codigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.des_pc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nom_pro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.des_ram)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.des_alm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.des_psu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.foto)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.des_pc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nom_pro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.des_ram)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.des_alm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.des_psu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.stock)
+                </td>
+                <td>
+                    <img class="imgPro" src="@Url.Content(item.foto)" />
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>

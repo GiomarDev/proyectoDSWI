@@ -48,7 +48,7 @@ namespace Proyecto.Controllers
 
             if (resultado == 1)
             {
-                return RedirectToAction("Index", "Home", new { USUARIO = codigo });
+                return RedirectToAction("listadoPc", "Pc", new { USUARIO = codigo });
             }
             else
             {
