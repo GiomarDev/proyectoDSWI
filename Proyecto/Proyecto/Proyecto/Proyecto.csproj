@@ -127,17 +127,27 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Almacenamiento.cs" />
+    <Compile Include="Models\AlmacenamientoO.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Fuente.cs" />
+    <Compile Include="Models\FuenteO.cs" />
     <Compile Include="Models\Gabinete.cs" />
+    <Compile Include="Models\GabineteO.cs" />
     <Compile Include="Models\Gpu.cs" />
+    <Compile Include="Models\GpuO.cs" />
     <Compile Include="Models\Monitor.cs" />
+    <Compile Include="Models\MonitorO.cs" />
     <Compile Include="Models\Motherboard.cs" />
+    <Compile Include="Models\MotherboardO.cs" />
     <Compile Include="Models\Pc.cs" />
     <Compile Include="Models\PcO.cs" />
     <Compile Include="Models\Periferico.cs" />
+    <Compile Include="Models\PerifericoO.cs" />
     <Compile Include="Models\Procesador.cs" />
+    <Compile Include="Models\ProcesadorO.cs" />
+    <Compile Include="Models\ProveedorO.cs" />
     <Compile Include="Models\Ram.cs" />
+    <Compile Include="Models\RamO.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -156,9 +166,11 @@
     <Content Include="Imagenes\12.PNG" />
     <Content Include="Imagenes\architecture-768432_1920.jpg" />
     <Content Include="Imagenes\banner.jpg" />
+    <Content Include="Imagenes\banner3.jpg" />
     <Content Include="Imagenes\black-1072366_1920.jpg" />
     <Content Include="Imagenes\ciberte.png" />
     <Content Include="Imagenes\f.png" />
+    <Content Include="Imagenes\fondo.jpg" />
     <Content Include="Imagenes\moon-1527501_1920.jpg" />
     <Content Include="Imagenes\Usuari.jpg" />
     <Content Include="Scripts\bootstrap.js" />

@@ -17,7 +17,7 @@ namespace Proyecto.Models
         [DisplayName("CATEGORIA")]
         public string cat_pc { get; set; }
 
-        [DisplayName("NOMBRE DE PROCESADOR")]
+        [DisplayName("PROCESADOR")]
         public string des_pro { get; set; }
 
         [DisplayName("TARJETA GRAFICA")]
