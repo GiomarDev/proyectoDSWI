@@ -5,75 +5,120 @@
     Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
 }
 
-<h2>LISTA DE PC'S</h2>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.codigo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.des_pc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.nom_pro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.des_ram)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.des_alm)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.des_psu)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.precio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.stock)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.foto)
-            </th>
-            <th></th>
-        </tr>
+<h2>Lista PC</h2>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.codigo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.des_pc)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nom_pro)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.des_ram)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.des_alm)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.des_psu)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.precio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.stock)
-                </td>
-                <td>
-                    <img class="imgPro" src="@Url.Content(item.foto)" />
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
-            </tr>
-        }
+<p>
+    @Html.ActionLink("Registrar Nueva PC", "nuevaPc")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.des_pc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cat_pc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.des_pro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.des_gpu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.des_mb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.des_ram)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.des_alm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.des_psu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.des_gab)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.des_mon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.des_per)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foto)
+        </th>
+        <th></th>
+    </tr>
 
-    </table>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.des_pc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cat_pc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.des_pro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.des_gpu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.des_mb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.des_ram)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.des_alm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.des_psu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.des_gab)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.des_mon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.des_per)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pedido)
+        </td>
+        <td>
+            <img class="imgArt" src="@Url.Content(item.foto)" />
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "modificaPc", new { id = item.codigo }) |
+            @Html.ActionLink("Detalle", "detallePc", new { id=item.codigo }) |
+            @Html.ActionLink("Eliminar", "eliminarPc", new { id = item.codigo })
+        </td>
+    </tr>
+}
+
+</table>

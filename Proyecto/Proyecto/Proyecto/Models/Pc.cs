@@ -14,8 +14,17 @@ namespace Proyecto.Models
         [DisplayName("DESCRIPCION DE PC")]
         public string des_pc { get; set; }
 
+        [DisplayName("CATEGORIA")]
+        public string cat_pc { get; set; }
+
         [DisplayName("NOMBRE DE PROCESADOR")]
-        public string nom_pro { get; set; }
+        public string des_pro { get; set; }
+
+        [DisplayName("TARJETA GRAFICA")]
+        public string des_gpu { get; set; }
+
+        [DisplayName("MOTHERBOARD")]
+        public string des_mb { get; set; }
 
         [DisplayName("MEMORIA RAM")]
         public string des_ram { get; set; }
@@ -26,11 +35,23 @@ namespace Proyecto.Models
         [DisplayName("FUENTE DE PODER")]
         public string des_psu { get; set; }
 
+        [DisplayName("GABINETE")]
+        public string des_gab { get; set; }
+
+        [DisplayName("MONITOR")]
+        public string des_mon { get; set; }
+
+        [DisplayName("PERIFERICO")]
+        public string des_per { get; set; }
+
         [DisplayName("PRECIO")]
         public double precio { get; set; }
 
         [DisplayName("STOCK")]
         public int stock { get; set; }
+
+        [DisplayName("PEDIDO")]
+        public int pedido { get; set; }
 
         [DisplayName("FOTO")]
         public string foto { get; set; }

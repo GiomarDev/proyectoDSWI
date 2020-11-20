@@ -1,0 +1,146 @@
+﻿@model Proyecto.Models.Pc
+
+@{
+    ViewBag.Title = "detallePc";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.des_pc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.des_pc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cat_pc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cat_pc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.des_pro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.des_pro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.des_gpu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.des_gpu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.des_mb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.des_mb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.des_ram)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.des_ram)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.des_alm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.des_alm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.des_psu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.des_psu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.des_gab)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.des_gab)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.des_mon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.des_mon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.des_per)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.des_per)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pedido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.foto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.foto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

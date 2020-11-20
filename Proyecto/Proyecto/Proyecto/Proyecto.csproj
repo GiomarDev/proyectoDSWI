@@ -126,8 +126,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Almacenamiento.cs" />
+    <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Fuente.cs" />
+    <Compile Include="Models\Gabinete.cs" />
+    <Compile Include="Models\Gpu.cs" />
+    <Compile Include="Models\Monitor.cs" />
+    <Compile Include="Models\Motherboard.cs" />
     <Compile Include="Models\Pc.cs" />
     <Compile Include="Models\PcO.cs" />
+    <Compile Include="Models\Periferico.cs" />
+    <Compile Include="Models\Procesador.cs" />
+    <Compile Include="Models\Ram.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -181,7 +191,11 @@
     <Content Include="Views\Shared\_LayoutPrincipal.cshtml" />
     <Content Include="Views\Shared\_LayoutUsuarios.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Pc\nuevaPc.cshtml" />
     <Content Include="Views\Pc\listadoPc.cshtml" />
+    <Content Include="Views\Pc\detallePc.cshtml" />
+    <Content Include="Views\Pc\eliminarPc.cshtml" />
+    <Content Include="Views\Pc\modificaPc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
