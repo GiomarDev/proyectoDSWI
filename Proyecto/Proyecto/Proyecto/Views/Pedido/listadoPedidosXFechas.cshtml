@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Proyecto.Utils.SP_LISTAPEDIDOSxFECHAS_Result>
+
+@{
+    ViewBag.Title = "listadoPedidosXFechas";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<h2>LISTADO DE PEDIDOS POR FECHAS</h2>
+
+@using (Html.BeginForm()) { 
+<section class="panel panel-primary">
+    <section class="panel-heading">
+        SELECCIONE RANGO DE FECHAS
+    </section>
+    <section class="panel-body">
+        FECHA INICIAL
+        @Html.TextBox("f1", "", new { @class = "form-control", @type = "Date" })
+        <br />
+        FECHA LIMITE
+        @Html.TextBox("f2", "", new { @class = "form-control", @type = "Date" })<br />
+        <input type="submit" value="Consultar" class="btn btn-success" />
+        <a class="btn btn-primary" href="@Url.Action("reportePedidosPDFXFechas", "Pedido", new { f1= ViewBag.f1, f2= ViewBag.f2})">VER REPORTE EN PDF</a>
+    </section>
+</section>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDE_PED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOM_CLI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMPLEADO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FEC_PED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FEN_PED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PAI_PED)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDE_PED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOM_CLI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMPLEADO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FEC_PED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FEN_PED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PAI_PED)
+        </td>
+    </tr>
+}
+
+</table>

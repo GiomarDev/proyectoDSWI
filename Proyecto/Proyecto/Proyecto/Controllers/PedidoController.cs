@@ -14,7 +14,7 @@ namespace Proyecto.Controllers
     public class PedidoController : Controller
     {
         Conexion objCon = new Conexion();
-        SqlConnection cn= null;
+        SqlConnection cn = null;
 
         List<SP_LISTAPEDIDOS_Result> listPedido()
         {
@@ -79,12 +79,12 @@ namespace Proyecto.Controllers
         {
             return View(listPedido());
         }
-        
+
         public ActionResult listadoPedidosXFechas(DateTime? f1, DateTime? f2)
         {
             ViewBag.f1 = f1;
             ViewBag.f2 = f2;
-            return View(listPedidoXFecha(f1.GetValueOrDefault(), 
+            return View(listPedidoXFecha(f1.GetValueOrDefault(),
                                         f2.GetValueOrDefault()
                                         ));
         }
@@ -105,6 +105,28 @@ namespace Proyecto.Controllers
                 Stream st = rd.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
                 st.Seek(0, SeekOrigin.Begin);
                 return File(st, "application/pdf", "ReportePedidos.pdf");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public ActionResult reportePedidosPDFXFechas(DateTime f1, DateTime f2)
+        {
+            ReportDocument rd = new ReportDocument();
+            rd.Load(Path.Combine(Server.MapPath("~/Reportes"), "crPedidos.rpt"));
+            rd.SetDataSource(listPedidoXFecha(f1, f2));
+
+            Response.ClearContent();
+            Response.ClearHeaders();
+            Response.Buffer = false;
+
+            try
+            {
+                Stream st = rd.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                st.Seek(0, SeekOrigin.Begin);
+                return File(st, "application/pdf", "ReportePedidosxFechas.pdf");
             }
             catch (Exception)
             {
@@ -133,5 +155,7 @@ namespace Proyecto.Controllers
         //        throw;
         //    }
         //}
+
+
     }
 }

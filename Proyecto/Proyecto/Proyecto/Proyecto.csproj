@@ -267,6 +267,7 @@
       <DependentUpon>PedidosEntites.edmx</DependentUpon>
     </Content>
     <Content Include="Views\Pedido\listadoPedidos.cshtml" />
+    <Content Include="Views\Pedido\listadoPedidosXFechas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
