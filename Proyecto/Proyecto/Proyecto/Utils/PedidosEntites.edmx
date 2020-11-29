@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="COMPULASTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SP_LISTAPEDIDOS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SP_LISTAPEDIDOSxFECHAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="F1" Type="date" Mode="In" />
+          <Parameter Name="F2" Type="date" Mode="In" />
+        </Function>
+        <EntityContainer Name="COMPULASTModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="COMPULASTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="COMPULASTEntities1" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SP_LISTAPEDIDOS" ReturnType="Collection(COMPULASTModel.SP_LISTAPEDIDOS_Result)" />
+          <FunctionImport Name="SP_LISTAPEDIDOSxFECHAS" ReturnType="Collection(COMPULASTModel.SP_LISTAPEDIDOSxFECHAS_Result)">
+            <Parameter Name="F1" Mode="In" Type="DateTime" />
+            <Parameter Name="F2" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SP_LISTAPEDIDOS_Result">
+          <Property Type="Int32" Name="IDE_PED" Nullable="false" />
+          <Property Type="String" Name="NOM_CLI" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="EMPLEADO" Nullable="true" MaxLength="101" />
+          <Property Type="DateTime" Name="FEC_PED" Nullable="false" />
+          <Property Type="DateTime" Name="FEN_PED" Nullable="false" />
+          <Property Type="String" Name="PAI_PED" Nullable="false" MaxLength="60" />
+        </ComplexType>
+        <ComplexType Name="SP_LISTAPEDIDOSxFECHAS_Result">
+          <Property Type="Int32" Name="IDE_PED" Nullable="false" />
+          <Property Type="String" Name="NOM_CLI" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="EMPLEADO" Nullable="true" MaxLength="101" />
+          <Property Type="DateTime" Name="FEC_PED" Nullable="false" />
+          <Property Type="DateTime" Name="FEN_PED" Nullable="false" />
+          <Property Type="String" Name="PAI_PED" Nullable="false" MaxLength="60" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="COMPULASTModelStoreContainer" CdmEntityContainer="COMPULASTEntities1" >
+          <FunctionImportMapping FunctionImportName="SP_LISTAPEDIDOS" FunctionName="COMPULASTModel.Store.SP_LISTAPEDIDOS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="COMPULASTModel.SP_LISTAPEDIDOS_Result">
+                <ScalarProperty Name="IDE_PED" ColumnName="IDE_PED" />
+                <ScalarProperty Name="NOM_CLI" ColumnName="NOM_CLI" />
+                <ScalarProperty Name="EMPLEADO" ColumnName="EMPLEADO" />
+                <ScalarProperty Name="FEC_PED" ColumnName="FEC_PED" />
+                <ScalarProperty Name="FEN_PED" ColumnName="FEN_PED" />
+                <ScalarProperty Name="PAI_PED" ColumnName="PAI_PED" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_LISTAPEDIDOSxFECHAS" FunctionName="COMPULASTModel.Store.SP_LISTAPEDIDOSxFECHAS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="COMPULASTModel.SP_LISTAPEDIDOSxFECHAS_Result">
+                <ScalarProperty Name="IDE_PED" ColumnName="IDE_PED" />
+                <ScalarProperty Name="NOM_CLI" ColumnName="NOM_CLI" />
+                <ScalarProperty Name="EMPLEADO" ColumnName="EMPLEADO" />
+                <ScalarProperty Name="FEC_PED" ColumnName="FEC_PED" />
+                <ScalarProperty Name="FEN_PED" ColumnName="FEN_PED" />
+                <ScalarProperty Name="PAI_PED" ColumnName="PAI_PED" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

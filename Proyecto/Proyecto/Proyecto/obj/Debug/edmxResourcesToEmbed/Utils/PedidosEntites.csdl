@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="COMPULASTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="COMPULASTEntities1" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SP_LISTAPEDIDOS" ReturnType="Collection(COMPULASTModel.SP_LISTAPEDIDOS_Result)" />
+    <FunctionImport Name="SP_LISTAPEDIDOSxFECHAS" ReturnType="Collection(COMPULASTModel.SP_LISTAPEDIDOSxFECHAS_Result)">
+      <Parameter Name="F1" Mode="In" Type="DateTime" />
+      <Parameter Name="F2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SP_LISTAPEDIDOS_Result">
+    <Property Type="Int32" Name="IDE_PED" Nullable="false" />
+    <Property Type="String" Name="NOM_CLI" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="EMPLEADO" Nullable="true" MaxLength="101" />
+    <Property Type="DateTime" Name="FEC_PED" Nullable="false" />
+    <Property Type="DateTime" Name="FEN_PED" Nullable="false" />
+    <Property Type="String" Name="PAI_PED" Nullable="false" MaxLength="60" />
+  </ComplexType>
+  <ComplexType Name="SP_LISTAPEDIDOSxFECHAS_Result">
+    <Property Type="Int32" Name="IDE_PED" Nullable="false" />
+    <Property Type="String" Name="NOM_CLI" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="EMPLEADO" Nullable="true" MaxLength="101" />
+    <Property Type="DateTime" Name="FEC_PED" Nullable="false" />
+    <Property Type="DateTime" Name="FEN_PED" Nullable="false" />
+    <Property Type="String" Name="PAI_PED" Nullable="false" MaxLength="60" />
+  </ComplexType>
+</Schema>

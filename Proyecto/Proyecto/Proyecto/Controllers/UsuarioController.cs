@@ -20,6 +20,11 @@ namespace Proyecto.Controllers
             return View();
         }
 
+        //public ActionResult duelve()
+        //{
+        //    return RedirectToAction("Index", "Usuario");
+        //}
+
         public ActionResult iniciarSesion(string codigo, string pass)
         {
             int resultado = -1;

@@ -1,0 +1,11 @@
+#Fri Nov 20 19:04:48 COT 2020
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.jdt.launching.javaApplet=org.eclipse.jdt.launching.javaApplet,debug
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.jdt.junit.launchconfig=org.eclipse.jdt.junit.launchconfig,debug
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.postmortemLaunchType=org.eclipse.cdt.dsf.gdb.launch.coreCLaunch,debug
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.pde.ui.RuntimeWorkbench=org.eclipse.pde.ui.RuntimeWorkbench,debug
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.attachLaunchType=org.eclipse.cdt.dsf.gdb.launch.attachCLaunch,debug
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.jdt.launching.localJavaApplication=org.eclipse.jdt.launching.localJavaApplication,debug
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.pde.ui.JunitLaunchConfig=org.eclipse.pde.ui.JunitLaunchConfig,debug
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.jdt.launching.remoteJavaApplication=org.eclipse.jdt.launching.remoteJavaApplication,debug
+eclipse.preferences.version=1
+//org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.applicationLaunchType=org.eclipse.cdt.dsf.gdb.launch.localCLaunch,debug;org.eclipse.cdt.cdi.launch.localCLaunch,run

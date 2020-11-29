@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="COMPULASTModelStoreContainer" CdmEntityContainer="COMPULASTEntities1">
+    <FunctionImportMapping FunctionImportName="SP_LISTAPEDIDOS" FunctionName="COMPULASTModel.Store.SP_LISTAPEDIDOS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="COMPULASTModel.SP_LISTAPEDIDOS_Result">
+          <ScalarProperty Name="IDE_PED" ColumnName="IDE_PED" />
+          <ScalarProperty Name="NOM_CLI" ColumnName="NOM_CLI" />
+          <ScalarProperty Name="EMPLEADO" ColumnName="EMPLEADO" />
+          <ScalarProperty Name="FEC_PED" ColumnName="FEC_PED" />
+          <ScalarProperty Name="FEN_PED" ColumnName="FEN_PED" />
+          <ScalarProperty Name="PAI_PED" ColumnName="PAI_PED" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_LISTAPEDIDOSxFECHAS" FunctionName="COMPULASTModel.Store.SP_LISTAPEDIDOSxFECHAS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="COMPULASTModel.SP_LISTAPEDIDOSxFECHAS_Result">
+          <ScalarProperty Name="IDE_PED" ColumnName="IDE_PED" />
+          <ScalarProperty Name="NOM_CLI" ColumnName="NOM_CLI" />
+          <ScalarProperty Name="EMPLEADO" ColumnName="EMPLEADO" />
+          <ScalarProperty Name="FEC_PED" ColumnName="FEC_PED" />
+          <ScalarProperty Name="FEN_PED" ColumnName="FEN_PED" />
+          <ScalarProperty Name="PAI_PED" ColumnName="PAI_PED" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

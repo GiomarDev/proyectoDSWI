@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Copia de Seguridad(Backup) de Informacion Municipal&apos; to &apos;Ventas de Artefactos de Hardware y PC Ensambladas&apos;" description="Rename resource &apos;Copia de Seguridad(Backup) de Informacion Municipal&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Copia de Seguridad(Backup) de Informacion Municipal" name="Ventas de Artefactos de Hardware y PC Ensambladas" stamp="1605917061583" updateReferences="true"/>
+</session>
