@@ -203,6 +203,16 @@
     <Content Include="Content\EstilosUsuarios.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fotos_cpu\1.jpg" />
+    <Content Include="fotos_cpu\10.jpg" />
+    <Content Include="fotos_cpu\2.jpg" />
+    <Content Include="fotos_cpu\3.jpg" />
+    <Content Include="fotos_cpu\4.jpg" />
+    <Content Include="fotos_cpu\5.jpg" />
+    <Content Include="fotos_cpu\6.jpg" />
+    <Content Include="fotos_cpu\7.jpg" />
+    <Content Include="fotos_cpu\8.jpg" />
+    <Content Include="fotos_cpu\9.jpg" />
     <Content Include="fotos_pc\1.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

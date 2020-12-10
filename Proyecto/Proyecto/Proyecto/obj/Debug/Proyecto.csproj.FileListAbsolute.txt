@@ -87,7 +87,6 @@ D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\bin
 D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\bin\EntityFramework.SqlServer.dll
 D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\bin\EntityFramework.xml
 D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\bin\EntityFramework.SqlServer.xml
-D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.csprojAssemblyReference.cache
 D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\bin\CrystalDecisions.CrystalReports.Engine.dll
 D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\bin\CrystalDecisions.ReportSource.dll
 D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\bin\CrystalDecisions.Shared.dll
