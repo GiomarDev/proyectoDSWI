@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Proyecto.Models.CarritoPc>
+@foreach (var item in Model)
+{ 
+<section class="bloque">
+    <img class="imgArt" src="@Url.Content(item.foto)" /><br />
+    @Html.DisplayNameFor(model => model.codigo): @Html.DisplayFor(modelItem => item.codigo)<br />
+    @Html.DisplayNameFor(model => model.desc): @Html.DisplayFor(modelItem => item.desc)<br />
+    @Html.DisplayNameFor(model => model.precio): S/ @item.precio.ToString("0.00")<br />
+    @Html.DisplayNameFor(model => model.cantidad): @Html.DisplayFor(modelItem => item.cantidad)<br />
+    @Html.ActionLink("ADQUIRIR", "seleccionarProductoPC", new { id = item.codigo }, new { @class = "btn btn-warning" })
+</section>
+
+}

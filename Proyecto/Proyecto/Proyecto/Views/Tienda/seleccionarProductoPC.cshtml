@@ -1,0 +1,25 @@
+﻿@model Proyecto.Models.CarritoPc
+
+@{
+    ViewBag.Title = "seleccionarProductoPC";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<h2>DETALLE DE COMPRA DE PC</h2>
+@Html.Partial("_PartialRegistroPc")
+
+<section id="columna2">
+    <section class="panel-primary">
+        <section class="panel-heading">
+            Ingrese cantidad: 
+        </section>
+        <section class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.TextBox("cant", "", new { @class = "form-control" })
+                @Html.ActionLink("Cancelar", "carritoComprasPC", "",new { @class="btn btn-danger" })
+                <input type="submit" value="Aceptar" class="btn btn-success" />
+            }
+        </section>
+    </section>
+</section>
