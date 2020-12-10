@@ -59,5 +59,82 @@ namespace Proyecto.Controllers
             return View(objC);
         }
 
+        public ActionResult agregarProductoPC(int id, int cant=0)
+        {
+            var miProductoPc = listPcCarrito().Where(p => p.codigo == id).FirstOrDefault();
+            
+            ItemPc objI = new ItemPc()
+            {
+                codigo = miProductoPc.codigo,
+                desc = miProductoPc.desc,
+                precio = miProductoPc.precio,
+                cantidad = cant,
+                foto = miProductoPc.foto
+            };
+
+            var miCarritoPc = (List<ItemPc>)Session["carritoPC"];
+            miCarritoPc.Add(objI);
+            Session["carritoPC"] = miCarritoPc;
+            return RedirectToAction("carritoComprasPC");
+        }
+
+        public ActionResult comprarPC()
+        {
+            if (Session["carritoPC"] == null)
+            {
+                return RedirectToAction("carritoComprasPC");
+            }
+
+            var miCarritoPc = (List<ItemPc>)Session["carritoPC"];
+            ViewBag.total = miCarritoPc.Sum(i => i.subTotal);
+            return View(miCarritoPc);
+        }
+
+        public ActionResult eliminarItemPC(int id)
+        {
+            var miCarritoPc = (List<ItemPc>)Session["carritoPC"];
+            var miProductoPc = miCarritoPc.Where(i => i.codigo == id).FirstOrDefault();
+            miCarritoPc.Remove(miProductoPc);
+
+            //Actualizar el Carrito con los nuevos registros
+            Session["carritoPC"] = miCarritoPc;
+            return RedirectToAction("comprarPC");
+        }
+
+        public ActionResult pagoPc()
+        {
+            List<ItemPc> detalle = (List<ItemPc>)Session["carritoPC"];
+            double total = 0;
+            foreach (ItemPc i in detalle)
+            {
+                total += i.subTotal;
+            }
+
+            ViewBag.total = total;
+            return View(detalle);
+        }
+
+        public ActionResult FinalizarVentaPC(string dni, string nom)
+        {
+            ViewBag.dni = dni;
+            ViewBag.nom = nom;
+            List<ItemPc> detalle = (List<ItemPc>)Session["carritoPC"];
+            double total = 0;
+            foreach (ItemPc i in detalle)
+            {
+                total += i.subTotal;
+            }
+
+            ViewBag.total = total;
+            return View();
+            
+        }
+
+        public ActionResult borrarSessionPC()
+        {
+            Session["carritoPC"] = null;
+            return RedirectToAction("Index");
+        }
+
     }
 }

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
 }
 
-<h2>DETALLE DE COMPRA DE PC</h2>
+<h2>PROCESO DE SELECCION DE PC</h2>
 @Html.Partial("_PartialRegistroPc")
 
 <section id="columna2">
@@ -14,8 +14,9 @@
             Ingrese cantidad: 
         </section>
         <section class="panel-body">
-            @using (Html.BeginForm())
+            @using (Html.BeginForm("agregarProductoPC", "Tienda"))
             {
+                @Html.Hidden("id",Model.codigo, new { @class ="form-control" })
                 @Html.TextBox("cant", "", new { @class = "form-control" })
                 @Html.ActionLink("Cancelar", "carritoComprasPC", "",new { @class="btn btn-danger" })
                 <input type="submit" value="Aceptar" class="btn btn-success" />

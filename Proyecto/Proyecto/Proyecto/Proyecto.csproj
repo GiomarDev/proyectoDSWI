@@ -213,6 +213,7 @@
     <Content Include="Imagenes\black-1072366_1920.jpg" />
     <Content Include="Imagenes\ciberte.png" />
     <Content Include="Imagenes\f.png" />
+    <Content Include="Imagenes\fin.png" />
     <Content Include="Imagenes\fondo.jpg" />
     <Content Include="Imagenes\imgCarritoCompras.jpg" />
     <Content Include="Imagenes\imgCarritoGpu.jpg" />
@@ -282,6 +283,10 @@
     <Content Include="Views\Shared\_PartialCarritoPc.cshtml" />
     <Content Include="Views\Tienda\seleccionarProductoPC.cshtml" />
     <Content Include="Views\Shared\_PartialRegistroPc.cshtml" />
+    <Content Include="Views\Tienda\comprarPC.cshtml" />
+    <Content Include="Views\Tienda\pagoPc.cshtml" />
+    <Content Include="Views\Shared\_LayoutFinalizarVenta.cshtml" />
+    <Content Include="Views\Tienda\FinalizarVentaPC.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
