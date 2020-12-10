@@ -209,7 +209,11 @@
     <Content Include="Imagenes\12.PNG" />
     <Content Include="Imagenes\architecture-768432_1920.jpg" />
     <Content Include="Imagenes\banner.jpg" />
+    <Content Include="Imagenes\banner12.jpg" />
+    <Content Include="Imagenes\banner21.jpg" />
     <Content Include="Imagenes\banner3.jpg" />
+    <Content Include="Imagenes\banner32.jpg" />
+    <Content Include="Imagenes\banner34.png" />
     <Content Include="Imagenes\black-1072366_1920.jpg" />
     <Content Include="Imagenes\ciberte.png" />
     <Content Include="Imagenes\f.png" />

@@ -21,83 +21,111 @@
 </head>
 <body>
     <header>
-        <nav class="menu">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <a class="navbar-brand pr-5 mr-5" href="#">COMPUPLAST</a>
+        <section id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
-                <div class="collapse navbar-collapse ml-4 " id="menu">
+            <section class="carousel-inner">
+                <section class="item active">
+                    <img id="banner" src="~/Imagenes/banner3.jpg">
+                </section>
 
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item dropdown pr-4 border ">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">COMPUTADORAS<span class="caret"></span></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                                <a class="dropdown-item">@Html.ActionLink("LISTA DE COMPUTADORAS", "listadoPc", "Pc")</a>
-                                <a class="dropdown-item">@Html.ActionLink("REGISTRO DE COMPUTADORAS", "nuevaPc", "Pc")</a>
-                            </div>
+                <section class="item">
+                    <img id="banner" src="~/Imagenes/banner12.jpg">
+                </section>
 
-                        </li>
-                        <li class="nav-item dropdown pr-4 border ">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">ORDEN DE COMPRA<span class="caret"></span></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                                <a class="dropdown-item">LISTADO ORDENES DE COMPRA</a>
-                                <a class="dropdown-item">GENERAR ORDEN DE COMPRA</a>
-                                <a class="dropdown-item">submenu 3</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown pr-4 border ">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">VENTA <span class="caret"></span></a>
-                            <div class="dropdown-menu border " aria-labelledby="dropdown_target">
-                                <a>@Html.ActionLink("GENERAR VENTA", "carritoCompras", "Tienda", new { @class = "dropdown-item text-dark" })</a>
-                                <a class="dropdown-item">LISTADO DE FACTURAS</a>
-                                <a class="dropdown-item">submenu 3</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown pr-4 border ">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">PRODUCTO <span class="caret"></span></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                                <a class="dropdown-item">LISTADO GENERAL</a>
-                                <a class="dropdown-item">NUEVO PRODUCTO</a>
-                                <a class="dropdown-item">submenu 3</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown pr-4 border ">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">CARRITO DE COMPRAS <span class="caret"></span></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                                <a>@Html.ActionLink("Carrito de Compras", "Index", "Tienda")</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown pr-4 border ">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">REPORTES<span class="caret"></span></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                                <a>@Html.ActionLink("REPORTES DE PEDIDOS", "listadoPedidos", "Pedido")</a>
-                                <a>@Html.ActionLink("REPORTES DE PEDIDOS POR FECHAS", "listadoPedidosXFechas", "Pedido")</a>
-                                <a class="dropdown-item">submenu 3</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown pr-4 border ">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">SESION USUARIO<span class="caret"></span></a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                                <a>@Html.ActionLink("EDITAR USUARIO", "proveedores", "Usuario", new { @class = "dropdown-item text-dark" })</a>
-                                <a>@Html.ActionLink("CERRAR SESION", "Index", "Usuario")</a>
-                                <a class="dropdown-item">submenu 3</a>
-                            </div>
-                        </li>
-                    </ul>
+                <section class="item">
+                    <img id="banner" src="~/Imagenes/banner34.png">
+                </section>
+            </section>
 
-                </div>
-            </nav>
-        </nav>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Antes</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Despues</span>
+            </a>
+        </section>
     </header>
-    <figure>
-        <img id="banner" src="~/Imagenes/banner3.jpg" />
-    </figure>
+    <nav class="menu">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand pr-5 mr-5" href="#">COMPUPLAST</a>
+
+            <div class="collapse navbar-collapse ml-4 " id="menu">
+
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item dropdown pr-4 border ">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">COMPUTADORAS<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown_target">
+                            <a class="dropdown-item">@Html.ActionLink("LISTA DE COMPUTADORAS", "listadoPc", "Pc")</a>
+                            <a class="dropdown-item">@Html.ActionLink("REGISTRO DE COMPUTADORAS", "nuevaPc", "Pc")</a>
+                        </div>
+
+                    </li>
+                    <li class="nav-item dropdown pr-4 border ">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">ORDEN DE COMPRA<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown_target">
+                            <a class="dropdown-item">LISTADO ORDENES DE COMPRA</a>
+                            <a class="dropdown-item">GENERAR ORDEN DE COMPRA</a>
+                            <a class="dropdown-item">submenu 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown pr-4 border ">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">VENTA <span class="caret"></span></a>
+                        <div class="dropdown-menu border " aria-labelledby="dropdown_target">
+                            <a>@Html.ActionLink("GENERAR VENTA", "carritoCompras", "Tienda", new { @class = "dropdown-item text-dark" })</a>
+                            <a class="dropdown-item">LISTADO DE FACTURAS</a>
+                            <a class="dropdown-item">submenu 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown pr-4 border ">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">PRODUCTO <span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown_target">
+                            <a class="dropdown-item">LISTADO GENERAL</a>
+                            <a class="dropdown-item">NUEVO PRODUCTO</a>
+                            <a class="dropdown-item">submenu 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown pr-4 border ">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">CARRITO DE COMPRAS <span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown_target">
+                            <a>@Html.ActionLink("Carrito de Compras", "Index", "Tienda")</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown pr-4 border ">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">REPORTES<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown_target">
+                            <a>@Html.ActionLink("REPORTES DE PEDIDOS", "listadoPedidos", "Pedido")</a>
+                            <a>@Html.ActionLink("REPORTES DE PEDIDOS POR FECHAS", "listadoPedidosXFechas", "Pedido")</a>
+                            <a class="dropdown-item">submenu 3</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown pr-4 border ">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">SESION USUARIO<span class="caret"></span></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown_target">
+                            <a>@Html.ActionLink("EDITAR USUARIO", "proveedores", "Usuario", new { @class = "dropdown-item text-dark" })</a>
+                            <a>@Html.ActionLink("CERRAR SESION", "Index", "Usuario")</a>
+                            <a class="dropdown-item">submenu 3</a>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </nav>
     @RenderBody()
     <footer>
         <h6>COMPULAST 2020 COPYRIGTH ©</h6>
     </footer>
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>
