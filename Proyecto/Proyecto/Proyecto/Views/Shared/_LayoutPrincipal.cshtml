@@ -71,11 +71,10 @@
 
                     </li>
                     <li class="nav-item dropdown pr-4 border ">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">ORDEN DE COMPRA<span class="caret"></span></a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">MONITORES<span class="caret"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                            <a class="dropdown-item">LISTADO ORDENES DE COMPRA</a>
-                            <a class="dropdown-item">GENERAR ORDEN DE COMPRA</a>
-                            <a class="dropdown-item">submenu 3</a>
+                            <a class="dropdown-item">@Html.ActionLink("LISTA DE MONITORES", "listadoMonitor", "Monitor")</a>
+                            <a class="dropdown-item">@Html.ActionLink("REGISTRO DE MONITORES", "nuevoMonitor", "Monitor")</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown pr-4 border ">
@@ -111,7 +110,7 @@
                     <li class="nav-item dropdown pr-4 border ">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">SESION USUARIO<span class="caret"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                            <a>@Html.ActionLink("EDITAR USUARIO", "proveedores", "Usuario", new { @class = "dropdown-item text-dark" })</a>
+                            <a>@Html.ActionLink("FINALIZAR", "Index", "fin")</a><br />
                             <a>@Html.ActionLink("CERRAR SESION", "Index", "Usuario")</a>
                             <a class="dropdown-item">submenu 3</a>
                         </div>

@@ -1,0 +1,137 @@
+﻿@model IEnumerable<Proyecto.Models.MonitorA>
+
+@{
+    ViewBag.Title = "listadoMonitor";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<h2>Lista Monitor</h2>
+
+<p>
+    @Html.ActionLink("Registrar Nuevo Monitor", "nuevoMonitor")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proveedor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.frec_monitor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.uex_pro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.upe_pro)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.proveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.frec_monitor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.uex_pro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.upe_pro)
+            </td>
+            <td>
+                <button class="btn btn-danger link">Foto</button>
+
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "modificaMonitor", new { id = item.codigo })
+                @Html.ActionLink("detalle", "detalleMonitor", new { id = item.codigo })
+                @Html.ActionLink("eliminar", "eliminarMonitor", new { id = item.codigo }) |
+
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">FOTO CARGADA CON AJAX GA</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="about:blank" class="image-responsive" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    //Ajax es una peticion al servidor cuando sucede un evento
+    //con jquery capture el evento click y obtuve el id del monitor
+    $(function () {
+
+        $(".link").click(function () {
+            //se obtiene la id del monitor
+            //$this me refiero al boto
+            //closest busca su padre mas cercano "tr" en este caso
+            //childre busca al primer hijo por el .first "td"en este caso
+            var idmon = $(this).closest("tr").children("td").first().text().trim();
+
+            //Realizo una peticion fetch
+            //fetch es una version mas moderna de ajax para realizar peticiones asincronas
+            //al fetch se le pasa la ruta del metodo definido en el controller, recibe el idmon
+            //con el primer then especifico el tipo de dato que recibiremos en este caso es tipo texto
+            //con el segundo then manipulamos el dato recibido
+            fetch('/Monitor/MostrarFoto/' + idmon).then(data => data.text()).then(function (data) {
+                //la imagen que esta dentro del modal carga la ruta recibida por el fetch
+                //la segunda linea muestra el modal
+                $("#modal img").attr("src", data);
+                $('#modal').modal('show');
+            });
+
+        });
+
+    });
+</script>

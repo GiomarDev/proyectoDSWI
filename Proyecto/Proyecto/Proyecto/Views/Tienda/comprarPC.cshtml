@@ -4,8 +4,6 @@
     ViewBag.Title = "comprarPC";
     Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
 }
-@if (Session["carritoPC"] != null)
-{
     <section class="panel-primary">
         <section class="panel-heading">
             PROCESO DE COMPRAS DE PC
@@ -70,8 +68,3 @@
         @Html.ActionLink("< RETORNAR", "carritoComprasPC", "", new { @class = "btn btn-primary" })
         @Html.ActionLink("PAGAR", "pagoPc", "", new { @class = "btn btn-danger" })
     </section>
-}
-else
-{
-    <h3 style="color:red">No has seleccionado ingredientes</h3>
-}

@@ -131,7 +131,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FinController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MonitorController.cs" />
     <Compile Include="Controllers\PcController.cs" />
     <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\TiendaController.cs" />
@@ -141,6 +143,7 @@
     </Compile>
     <Compile Include="Models\Almacenamiento.cs" />
     <Compile Include="Models\AlmacenamientoO.cs" />
+    <Compile Include="Models\CarritoMonitor.cs" />
     <Compile Include="Models\CarritoPc.cs" />
     <Compile Include="Models\CarritoProce.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -150,9 +153,12 @@
     <Compile Include="Models\GabineteO.cs" />
     <Compile Include="Models\Gpu.cs" />
     <Compile Include="Models\GpuO.cs" />
+    <Compile Include="Models\ItemMonitor.cs" />
     <Compile Include="Models\ItemPc.cs" />
     <Compile Include="Models\ItemProce.cs" />
+    <Compile Include="Models\Marca.cs" />
     <Compile Include="Models\Monitor.cs" />
+    <Compile Include="Models\MonitorA.cs" />
     <Compile Include="Models\MonitorO.cs" />
     <Compile Include="Models\Motherboard.cs" />
     <Compile Include="Models\MotherboardO.cs" />
@@ -162,6 +168,7 @@
     <Compile Include="Models\PerifericoO.cs" />
     <Compile Include="Models\Procesador.cs" />
     <Compile Include="Models\ProcesadorO.cs" />
+    <Compile Include="Models\Proveedor.cs" />
     <Compile Include="Models\ProveedorO.cs" />
     <Compile Include="Models\Ram.cs" />
     <Compile Include="Models\RamO.cs" />
@@ -216,6 +223,16 @@
     <Content Include="fotos_cpu\7.jpg" />
     <Content Include="fotos_cpu\8.jpg" />
     <Content Include="fotos_cpu\9.jpg" />
+    <Content Include="fotos_monitor\1.jpg" />
+    <Content Include="fotos_monitor\10.jpg" />
+    <Content Include="fotos_monitor\2.jpg" />
+    <Content Include="fotos_monitor\3.jpg" />
+    <Content Include="fotos_monitor\4.jpg" />
+    <Content Include="fotos_monitor\5.jpg" />
+    <Content Include="fotos_monitor\6.jpg" />
+    <Content Include="fotos_monitor\7.jpg" />
+    <Content Include="fotos_monitor\8.jpg" />
+    <Content Include="fotos_monitor\9.jpg" />
     <Content Include="fotos_pc\1.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -309,6 +326,25 @@
     <Content Include="Views\Shared\_LayoutFinalizarVenta.cshtml" />
     <Content Include="Views\Tienda\FinalizarVentaPC.cshtml" />
     <Content Include="Views\Shared\_LayoutPrincipalPage.cshtml" />
+    <Content Include="Views\Tienda\carritoComprasPRO.cshtml" />
+    <Content Include="Views\Shared\_PartialCarritoProce.cshtml" />
+    <Content Include="Views\Tienda\seleccionarProductoPROCE.cshtml" />
+    <Content Include="Views\Shared\_PartialRegistroProce.cshtml" />
+    <Content Include="Views\Tienda\comprarPROCE.cshtml" />
+    <Content Include="Views\Tienda\pagoProce.cshtml" />
+    <Content Include="Views\Tienda\FinalizarVentaPROCE.cshtml" />
+    <Content Include="Views\Pc\modificaPcs.cshtml" />
+    <Content Include="Views\Monitor\listadoMonitor.cshtml" />
+    <Content Include="Views\Monitor\nuevoMonitor.cshtml" />
+    <Content Include="Views\Monitor\modificaMonitor.cshtml" />
+    <Content Include="Views\Tienda\carritoComprasMonitor.cshtml" />
+    <Content Include="Views\Shared\_PartialCarritoMonitor.cshtml" />
+    <Content Include="Views\Tienda\seleccionarProductoMonitor.cshtml" />
+    <Content Include="Views\Shared\_PartialRegistroMonitor.cshtml" />
+    <Content Include="Views\Tienda\comprarMonitor.cshtml" />
+    <Content Include="Views\Tienda\pagoMonitor.cshtml" />
+    <Content Include="Views\Tienda\FinalizarVentaMonitor.cshtml" />
+    <Content Include="Views\Fin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

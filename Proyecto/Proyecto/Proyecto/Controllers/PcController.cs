@@ -367,7 +367,7 @@ namespace Proyecto.Controllers
             ViewBag.rams = new SelectList(ListRam(), "codigo", "nombre");
             ViewBag.almacs = new SelectList(ListAlmacenamiento(), "codigo", "nombre");
             ViewBag.fuentes = new SelectList(ListFuente(), "codigo", "nombre");
-            ViewBag.gabinetes = new SelectList(ListGabinete(), "codigo", "nombre");
+            ViewBag.gabinetes = new SelectList(ListGabinete(), "codigo", "nombre"); 
             ViewBag.monitores = new SelectList(ListMonitor(), "codigo", "nombre");
             ViewBag.perifericos = new SelectList(ListPeriferico(), "codigo", "nombre");
             Crud("SP_NUEVAPC", parametros);
@@ -412,7 +412,7 @@ namespace Proyecto.Controllers
             return RedirectToAction("listadoPc");
         }
 
-        public ActionResult modificaPc(int id)
+        public ActionResult modificaPcs(int id)
         {
             //Metodo para la busqueda
             PcO objC = ListPcO().Where(c => c.codigo == id).FirstOrDefault();
@@ -430,61 +430,89 @@ namespace Proyecto.Controllers
 
         }
 
-       [HttpPost]
-        public ActionResult modificaPc(PcO objC)
+        //[HttpPost]
+        // public ActionResult modificaPc(PcO objC)
+        // {
+        //     if (!ModelState.IsValid)
+        //     {
+        //         return View(objC);
+        //     }
+        //     cn.Open();
+        //     ViewBag.mensaje = "";
+        //     //Inicio de La transaccion
+        //     SqlTransaction tr = cn.BeginTransaction(IsolationLevel.Serializable);
+        //     try
+        //     {
+        //         SqlCommand cmd = new SqlCommand("SP_ACTUALIZAPC", cn, tr);
+        //         //Parametros SQL @ID_PC ,@DES , @CAT , @PROC , @GPU , @MB  @RAM , @ALM , @PSU , @GAB , @MON , @PER , @PRE , @UEX , @UPE , @FOT 
+        //         cmd.CommandType = CommandType.StoredProcedure;
+        //         cmd.Parameters.AddWithValue("@IDE", objC.codigo);
+        //         cmd.Parameters.AddWithValue("@DES", objC.des_pc);
+        //         cmd.Parameters.AddWithValue("@CAT", objC.id_cat);
+        //         cmd.Parameters.AddWithValue("@PROC", objC.id_proc);
+        //         cmd.Parameters.AddWithValue("@GPU", objC.id_gpu);
+        //         cmd.Parameters.AddWithValue("@MB", objC.id_mb);
+        //         cmd.Parameters.AddWithValue("@RAM", objC.id_ram);
+        //         cmd.Parameters.AddWithValue("@ALM", objC.id_alm);
+        //         cmd.Parameters.AddWithValue("@PSU", objC.id_psu);
+        //         cmd.Parameters.AddWithValue("@GAB", objC.id_gab);
+        //         cmd.Parameters.AddWithValue("@MON", objC.id_mon);
+        //         cmd.Parameters.AddWithValue("@PER", objC.id_per);
+        //         cmd.Parameters.AddWithValue("@PRE", objC.precio);
+        //         cmd.Parameters.AddWithValue("@UEX", objC.uex_pro);
+        //         cmd.Parameters.AddWithValue("@UPE", objC.upe_pro);
+        //         cmd.Parameters.AddWithValue("@FOT", objC.foto);
+        //         int n = cmd.ExecuteNonQuery();
+        //         //Asegurar que se registren
+        //         tr.Commit();
+        //         ViewBag.mensaje = n.ToString() + " PC Actualizado";
+        //     }
+        //     catch (Exception ex)
+        //     {
+        //         //Recarga para el registro
+        //         ViewBag.mensaje = ex.Message;
+        //         tr.Rollback();
+        //     }
+        //     cn.Close(); 
+        //     ViewBag.categorias = new SelectList(ListCategoria(), "codigo", "nombre", objC.id_cat);
+        //     ViewBag.procesadores = new SelectList(ListProcesador(), "codigo", "nombre", objC.id_proc);
+        //     ViewBag.gpus = new SelectList(ListGpu(), "codigo", "nombre", objC.id_gpu);
+        //     ViewBag.mothers = new SelectList(ListMotherboard(), "codigo", "nombre", objC.id_mb);
+        //     ViewBag.rams = new SelectList(ListRam(), "codigo", "nombre", objC.id_ram);
+        //     ViewBag.almacs = new SelectList(ListAlmacenamiento(), "codigo", "nombre", objC.id_alm);
+        //     ViewBag.fuentes = new SelectList(ListFuente(), "codigo", "nombre", objC.id_psu);
+        //     ViewBag.gabinetes = new SelectList(ListGabinete(), "codigo", "nombre", objC.id_gab);
+        //     ViewBag.monitores = new SelectList(ListMonitor(), "codigo", "nombre", objC.id_mon);
+        //     ViewBag.perifericos = new SelectList(ListPeriferico(), "codigo", "nombre", objC.id_per);
+        //     return View(objC);
+        // }
+
+        [HttpPost]
+        public ActionResult modificaPcs(PcO objP)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(objC);
-            }
-            cn.Open();
-            ViewBag.mensaje = "";
-            //Inicio de La transaccion
-            SqlTransaction tr = cn.BeginTransaction(IsolationLevel.Serializable);
-            try
-            {
-                SqlCommand cmd = new SqlCommand("SP_ACTUALIZAPC", cn, tr);
-                //Parametros SQL @ID_PC ,@DES , @CAT , @PROC , @GPU , @MB  @RAM , @ALM , @PSU , @GAB , @MON , @PER , @PRE , @UEX , @UPE , @FOT 
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@IDE", objC.codigo);
-                cmd.Parameters.AddWithValue("@DES", objC.des_pc);
-                cmd.Parameters.AddWithValue("@CAT", objC.id_cat);
-                cmd.Parameters.AddWithValue("@PROC", objC.id_proc);
-                cmd.Parameters.AddWithValue("@GPU", objC.id_gpu);
-                cmd.Parameters.AddWithValue("@MB", objC.id_mb);
-                cmd.Parameters.AddWithValue("@RAM", objC.id_ram);
-                cmd.Parameters.AddWithValue("@ALM", objC.id_alm);
-                cmd.Parameters.AddWithValue("@PSU", objC.id_psu);
-                cmd.Parameters.AddWithValue("@GAB", objC.id_gab);
-                cmd.Parameters.AddWithValue("@MON", objC.id_mon);
-                cmd.Parameters.AddWithValue("@PER", objC.id_per);
-                cmd.Parameters.AddWithValue("@PRE", objC.precio);
-                cmd.Parameters.AddWithValue("@UEX", objC.uex_pro);
-                cmd.Parameters.AddWithValue("@UPE", objC.upe_pro);
-                cmd.Parameters.AddWithValue("@FOT", objC.foto);
-                int n = cmd.ExecuteNonQuery();
-                //Asegurar que se registren
-                tr.Commit();
-                ViewBag.mensaje = n.ToString() + " PC Actualizado";
-            }
-            catch (Exception ex)
-            {
-                //Recarga para el registro
-                ViewBag.mensaje = ex.Message;
-                tr.Rollback();
-            }
-            cn.Close(); 
-            ViewBag.categorias = new SelectList(ListCategoria(), "codigo", "nombre", objC.id_cat);
-            ViewBag.procesadores = new SelectList(ListProcesador(), "codigo", "nombre", objC.id_proc);
-            ViewBag.gpus = new SelectList(ListGpu(), "codigo", "nombre", objC.id_gpu);
-            ViewBag.mothers = new SelectList(ListMotherboard(), "codigo", "nombre", objC.id_mb);
-            ViewBag.rams = new SelectList(ListRam(), "codigo", "nombre", objC.id_ram);
-            ViewBag.almacs = new SelectList(ListAlmacenamiento(), "codigo", "nombre", objC.id_alm);
-            ViewBag.fuentes = new SelectList(ListFuente(), "codigo", "nombre", objC.id_psu);
-            ViewBag.gabinetes = new SelectList(ListGabinete(), "codigo", "nombre", objC.id_gab);
-            ViewBag.monitores = new SelectList(ListMonitor(), "codigo", "nombre", objC.id_mon);
-            ViewBag.perifericos = new SelectList(ListPeriferico(), "codigo", "nombre", objC.id_per);
-            return View(objC);
+            List<SqlParameter> parametros = new List<SqlParameter>()
+            { 
+                //Parametros de registro            
+                 new SqlParameter(){ParameterName="@ID_PC", SqlDbType=SqlDbType.Int,Value=objP.codigo},
+                new SqlParameter(){ParameterName="@DES", SqlDbType=SqlDbType.VarChar,Value=objP.des_pc},
+                new SqlParameter(){ParameterName="@CAT", SqlDbType=SqlDbType.Int,Value=objP.id_cat},
+                new SqlParameter(){ParameterName="@PROC", SqlDbType=SqlDbType.Int,Value=objP.id_proc},
+                new SqlParameter(){ParameterName="@GPU", SqlDbType=SqlDbType.Int,Value=objP.id_gpu},
+                new SqlParameter(){ParameterName="@MB", SqlDbType=SqlDbType.Int,Value=objP.id_mb},
+                new SqlParameter(){ParameterName="@RAM", SqlDbType=SqlDbType.Int,Value=objP.id_ram},
+                new SqlParameter(){ParameterName="@ALM", SqlDbType=SqlDbType.Int,Value=objP.id_alm},
+                new SqlParameter(){ParameterName="@PSU", SqlDbType=SqlDbType.Int,Value=objP.id_psu},
+                new SqlParameter(){ParameterName="@GAB", SqlDbType=SqlDbType.Int,Value=objP.id_gab},
+                new SqlParameter(){ParameterName="@MON", SqlDbType=SqlDbType.Int,Value=objP.id_mon},
+                new SqlParameter(){ParameterName="@PER", SqlDbType=SqlDbType.Int,Value=objP.id_per},
+                new SqlParameter(){ParameterName="@PRE", SqlDbType=SqlDbType.Money,Value=objP.precio},
+                new SqlParameter(){ParameterName="@UEX", SqlDbType=SqlDbType.Int,Value=objP.uex_pro},
+                new SqlParameter(){ParameterName="@UPE", SqlDbType=SqlDbType.Int,Value=objP.upe_pro},
+                new SqlParameter(){ParameterName="@FOT", SqlDbType=SqlDbType.VarChar,Value=objP.foto}
+                //(@ID_PC,@DES, @CAT , @PROC , @GPU , @MB , @RAM , @ALM , @PSU , @GAB , @MON , @PER , @PRE , @UEX , @UPE , @FOT)
+            };
+            Crud("SP_ACTUALIZAPC", parametros);
+            return RedirectToAction("listadoPc");
         }
 
     }

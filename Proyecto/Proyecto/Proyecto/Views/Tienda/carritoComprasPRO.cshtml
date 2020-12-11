@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Proyecto.Models.CarritoProce>
+
+@{
+    ViewBag.Title = "carritoComprasPRO";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<h2>CARRITO DE COMPRAS · PROCESADOR</h2>
+<header><center>@Html.ActionLink("Realizar Compra", "comprarPROCE", null, new { @class = "btn btn-success" })</center></header>
+<br />
+
+@Html.Partial("_PartialCarritoProce")
+

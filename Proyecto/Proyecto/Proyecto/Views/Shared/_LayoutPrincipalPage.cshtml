@@ -72,11 +72,10 @@
 
                     </li>
                     <li class="nav-item dropdown pr-4 border ">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">ORDEN DE COMPRA<span class="caret"></span></a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">MONITORES<span class="caret"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                            <a class="dropdown-item">LISTADO ORDENES DE COMPRA</a>
-                            <a class="dropdown-item">GENERAR ORDEN DE COMPRA</a>
-                            <a class="dropdown-item">submenu 3</a>
+                            <a class="dropdown-item">@Html.ActionLink("LISTA DE MONITORES", "listadoMonitor", "Monitor")</a>
+                            <a class="dropdown-item">@Html.ActionLink("REGISTRO DE MONITORES", "nuevoMonitor", "Monitor")</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown pr-4 border ">
@@ -112,7 +111,7 @@
                     <li class="nav-item dropdown pr-4 border ">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">SESION USUARIO<span class="caret"></span></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                            <a>@Html.ActionLink("EDITAR USUARIO", "proveedores", "Usuario", new { @class = "dropdown-item text-dark" })</a>
+                            <a>@Html.ActionLink("FINALIZAR", "Index", "fin")</a>
                             <a>@Html.ActionLink("CERRAR SESION", "Index", "Usuario")</a>
                             <a class="dropdown-item">submenu 3</a>
                         </div>
@@ -136,13 +135,12 @@
                     <div class="card">
                         <img class="imgMarco" src="~/Imagenes/valeria.jpg" alt="Card image cap">
                         <div class="card-body">
+
+                            <h4 class="card-title">Valeria Nicole Gabancho Davila</h4>
                             <div class="badges">
                                 <span class="badge badge-warning">Programador</span>
-                                <span class="badge badge-info">Word</span>
-                                <span class="badge badge-info">Programador</span>
                             </div>
-                            <h4 class="card-title">Valeria Nicole Gabancho Davila</h4>
-                            <p class="card-text">Programador vestibulum maximus a et mi. Pellentesque orci ante, fringilla vitae blandit et, vehicula vel turpis. Fusce luctus odio nulla, a tincidunt tellus ultricies in.</p>
+                            <p class="card-text"></p>
                         </div>
                     </div>
                 </div>
@@ -150,13 +148,12 @@
                     <div class="card">
                         <img class="imgMarco" src="~/Imagenes/esta.png" alt="Card image cap">
                         <div class="card-body">
+
+                            <h4 class="card-title">Giomar Angelo Limo Caldas</h4>
                             <div class="badges">
                                 <span class="badge badge-primary">Programador</span>
-                                <span class="badge badge-dark">Programador</span>
-                                <span class="badge badge-info">Programador</span>
                             </div>
-                            <h4 class="card-title">Giomar Angelo Limo Caldas</h4>
-                            <p class="card-text">Curabitur nulla felis, maximus ac eleifend a, interdum sed lacus. Donec at lacus eget sapien vestibulum maximus a et mi. Pellentesque orci ante, fringilla vitae blandit et, vehicula vel turpis. Fusce luctus odio nulla, a tincidunt tellus ultricies in.</p>
+                            <p class="card-text"></p>
                         </div>
                     </div>
                 </div>
@@ -164,13 +161,12 @@
                     <div class="card">
                         <img class="imgMarco" src="~/Imagenes/arturoxd.PNG" alt="Card image cap">
                         <div class="card-body">
+
+                            <h4 class="card-title">Arturo Chaparro</h4>
                             <div class="badges">
                                 <span class="badge badge-success">Programador</span>
-                                <span class="badge badge-secondary">Programador</span>
-                                <span class="badge badge-info">Programador</span>
                             </div>
-                            <h4 class="card-title">Arturo Chaparro</h4>
-                            <p class="card-text">Curabitur nulla felis, maximus ac eleifend a, interdum sed lacus. Donec at lacus eget sapien vestibulum maximus a et mi. Pellentesque orci ante, fringilla vitae blandit et, vehicula vel turpis. Fusce luctus odio nulla, a tincidunt tellus ultricies in.</p>
+                            <p class="card-text"></p>
                         </div>
                     </div>
                 </div>
@@ -178,13 +174,12 @@
                     <div class="card">
                         <img class="card-img-top" src="~/Imganes/a" alt="Card image cap">
                         <div class="card-body">
+
+                            <h4 class="card-title">Juan Chavez</h4>
                             <div class="badges">
                                 <span class="badge badge-success">Programador</span>
-                                <span class="badge badge-secondary">Programador</span>
-                                <span class="badge badge-info">Programador</span>
                             </div>
-                            <h5 class="card-title">Juan Chavez</h5>
-                            <p class="card-text">Curabitur nulla felis, maximus ac eleifend a, interdum sed lacus. Donec at lacus eget sapien vestibulum maximus a et mi. Pellentesque orci ante, fringilla vitae blandit et, vehicula vel turpis. Fusce luctus odio nulla, a tincidunt tellus ultricies in.</p>
+                            <p class="card-text"></p>
                         </div>
                     </div>
                 </div>

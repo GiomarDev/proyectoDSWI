@@ -1,0 +1,26 @@
+﻿@model Proyecto.Models.CarritoProce
+
+@{
+    ViewBag.Title = "seleccionarProductoPROCE";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<h2>PROCESO DE SELECCION DE PROCESADORES</h2>
+@Html.Partial("_PartialRegistroProce")
+
+<section id="columna2">
+    <section class="panel-primary">
+        <section class="panel-heading">
+            Ingrese cantidad:
+        </section>
+        <section class="panel-body">
+            @using (Html.BeginForm("agregarProductoPROCE", "Tienda"))
+            {
+                @Html.Hidden("id", Model.codigo, new { @class = "form-control" })
+                @Html.TextBox("cant", "", new { @class = "form-control" })
+                @Html.ActionLink("Cancelar", "carritoComprasPRO", "", new { @class = "btn btn-danger" })
+                <input type="submit" value="Aceptar" class="btn btn-success" />
+            }
+        </section>
+    </section>
+</section>
