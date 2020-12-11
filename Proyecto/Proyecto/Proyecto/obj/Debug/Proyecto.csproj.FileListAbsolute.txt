@@ -103,3 +103,4 @@ D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\bin
 D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\bin\stdole.dll
+D:\Ciclo05\DESARROLLO DE SERVICIOS WEB I\Proyecto\Proyecto\Proyecto\Proyecto\obj\Debug\Proyecto.csprojAssemblyReference.cache

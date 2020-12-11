@@ -35,9 +35,30 @@ namespace Proyecto.Controllers
             dr.Close();
             cn.Close();
             return aCarritoPc;
-        
         }
 
+        List<CarritoProce> listProceCarrito()
+        {
+            List<CarritoProce> aCarritoProce = new List<CarritoProce>();
+            SqlCommand cmd = new SqlCommand("SP_LISTACARRITOPROCESADOR", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                aCarritoProce.Add(new CarritoProce()
+                {
+                    codigo = int.Parse(dr[0].ToString()),
+                    desc = dr[1].ToString(),
+                    precio = double.Parse(dr[2].ToString()),
+                    cantidad = int.Parse(dr[3].ToString()),
+                    foto = dr[4].ToString()
+                });
+            }
+            dr.Close();
+            cn.Close();
+            return aCarritoProce;
+        }
 
         public ActionResult Index()
         {

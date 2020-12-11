@@ -1,0 +1,229 @@
+﻿#main .carousel-inner img {
+    max-height: 70vh;
+    object-fit: cover;
+    filter: grayscale(70%);
+}
+
+.btn-platzi {
+    background-color: #97c93e;
+    color: white;
+}
+
+    .btn-platzi:hover {
+        background-color: #82ad36;
+    }
+
+#carousel {
+    position: relative;
+}
+
+    #carousel .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        z-index: 1;
+    }
+
+        #carousel .overlay .container,
+        #carousel .overlay .row {
+            height: 100%;
+        }
+
+#place-time {
+    background-color: #343a40;
+    color: white;
+}
+
+    #place-time img {
+        max-width: 100%;
+    }
+
+.text-rasp {
+    color: #97c93e !important;
+}
+
+#footer {
+    background: linear-gradient(90deg,#1c3643,#273b47 25%,#1e5372)
+}
+
+    #footer a {
+        color: white;
+    }
+
+#header img {
+    width: 80px;
+}
+
+
+body {
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+}
+
+#banner {
+    width: 1370px;
+}
+
+h2, h4, h6 {
+    font-family: Tahoma;
+    text-align: center;
+}
+
+.menu {
+    position: absolute;
+    top: 0px;
+    width: 1370px;
+    height: 5%;
+    display: flex;
+    color: white;
+    background-color: darkcyan;
+}
+
+    .menu ul {
+        display: flex;
+        margin: auto;
+    }
+
+    .menu li {
+        list-style: none;
+        padding: 10px 20px;
+    }
+
+        .menu li:hover {
+            background-color: darkblue;
+            cursor: pointer;
+        }
+
+    .menu ul li ul {
+        flex-direction: column;
+        position: absolute;
+        background-color: darkblue;
+        margin-top: 15px;
+        transform: rotateY(240deg) scale(0);
+        transition: all 1s;
+    }
+
+    .menu ul li:hover > ul {
+        transform: rotateY(0deg) scale(1);
+        transition: all 1s;
+        background-color: darkolivegreen;
+    }
+
+a {
+    color: blue;
+}
+
+    a:link, a:hover {
+        text-decoration: none;
+        color: blue;
+    }
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px;
+}
+
+footer {
+    background-color: darkcyan;
+    position: fixed;
+    padding: 0px;
+    bottom: 0px;
+    width: 1370px;
+    height: 25px;
+    color: white;
+}
+
+#logo {
+    width: 180px;
+    height: 160px;
+    margin: 5px;
+}
+
+#columna {
+    margin: 10px;
+    float: left;
+    width: 31%;
+    padding: 25px;
+    text-align: center;
+    border: solid 1px;
+    font-size: 16px;
+}
+
+.bloque {
+    width: 32%;
+    height: 180px;
+    float: left;
+    margin: 5px;
+    border: 1px dotted;
+}
+
+.imgArt {
+    width: 35%;
+    height: 170px;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.imgPro {
+    width: 25%;
+    height: 170px;
+    margin: 5px;
+    padding: 1px;
+    border-radius: 10px;
+}
+
+.marco {
+    width: 50%;
+    height: 200px;
+    float: left;
+}
+
+.imgMarco {
+    width: 60%;
+    height: 300px;
+    float: left;
+    margin: 10px 20% 10px 20%;
+    padding: 15px;
+}
+
+#monto {
+    font-family: 'Trebuchet MS';
+    font-size: 24px;
+}
+
+#columna1 {
+    margin: 0px;
+    float: left;
+    width: 58%;
+    padding: 5px;
+}
+
+#columna2 {
+    margin: 0px;
+    float: left;
+    width: 40%;
+    padding: 5px;
+}
+
+th, td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+    caption-side: bottom;
+}
+
+caption {
+    padding: 0.3em;
+}

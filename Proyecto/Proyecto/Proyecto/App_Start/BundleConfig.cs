@@ -27,10 +27,16 @@ namespace Proyecto
                       "~/Content/Estilos.css",
                       "~/Content/site.css"));
 
+            bundles.Add(new StyleBundle("~/Content/cssprincipalpage").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/EstilosPrincipal.css",
+                      "~/Content/site.css"));
+
             bundles.Add(new StyleBundle("~/Content/us").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/EstilosUsuarios.css",
                       "~/Content/site.css"));
+
         }
     }
 }
