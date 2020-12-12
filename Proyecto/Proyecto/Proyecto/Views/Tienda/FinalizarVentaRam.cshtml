@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "FinalizarVentaRam";
+    Layout = "~/Views/Shared/_LayoutFinalizarVenta.cshtml";
+}
+
+
+<section>
+    <h2>GRACIAS POR SU COMPRA</h2>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <figure>
+        <center><img src="~/Imagenes/fin.png" /></center>
+    </figure>
+    <br />
+    <section id="monto">
+        <center><h1>Total a Pagar: S/@(((decimal)ViewBag.total).ToString("0.00"))</h1><br /></center>
+    </section>
+</section>
+<center>@Html.ActionLink("CERRAR", "borrarSessionRam", "", new { @class = "btn btn-danger" })</center>
+
+

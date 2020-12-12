@@ -141,6 +141,36 @@ namespace Proyecto.Controllers
             return aCategoria;
         }
 
+        List<MonitorA> ListDetalleMonitor()
+        {
+            List<MonitorA> aMonitor = new List<MonitorA>();
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("SP_LISTADETALLEMONITOR", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                aMonitor.Add(new MonitorA()
+                {
+                    codigo = int.Parse(dr[0].ToString()),
+                    proveedor = dr[1].ToString(),
+                    nombre = dr[2].ToString(),
+                    marca = dr[3].ToString(),
+                    categoria = dr[4].ToString(),
+                    frec_monitor = int.Parse(dr[5].ToString()),
+                    precio = double.Parse(dr[6].ToString()),
+                    uex_pro = int.Parse(dr[7].ToString()),
+                    upe_pro = int.Parse(dr[8].ToString()),
+                    foto = dr[9].ToString()
+
+                });
+            }
+            dr.Close();
+            cn.Close();
+            return aMonitor;
+        }
+
+
 
 
         public ActionResult listadoMonitor()
@@ -214,7 +244,7 @@ namespace Proyecto.Controllers
         //detalle monitor
         public ActionResult detalleMonitor(int id)
         {
-            MonitorA objM = ListMonitor().Where(m => m.codigo == id).FirstOrDefault();
+            MonitorA objM = ListDetalleMonitor().Where(m => m.codigo == id).FirstOrDefault();
             return View(objM);
         }
 

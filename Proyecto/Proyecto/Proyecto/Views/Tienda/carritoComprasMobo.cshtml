@@ -1,0 +1,9 @@
+﻿
+@{ ViewBag.Title = "carritoComprasMobo";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml"; }
+
+<h2>CARRITO DE COMPRAS · MOTHERBOARD</h2>
+<header><center>@Html.ActionLink("Realizar Compra", "comprarMobo", null, new { @class = "btn btn-success" })</center></header>
+<br />
+
+@Html.Partial("_PartialCarritoMobo")

@@ -380,121 +380,238 @@ namespace Proyecto.Controllers
         }
 
 
-        //////carrito de la ram
-        //List<CarritoRam> listRamCarrito()
-        //{
-        //    List<CarritoRam> aCarritoRam = new List<CarritoRam>();
-        //    SqlCommand cmd = new SqlCommand("SP_LISTACARRITORAM", cn);
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cn.Open();
-        //    SqlDataReader dr = cmd.ExecuteReader();
-        //    while (dr.Read())
-        //    {
-        //        aCarritoRam.Add(new CarritoRam()
-        //        {
-        //            codigo = int.Parse(dr[0].ToString()),
-        //            desc = dr[1].ToString(),
-        //            precio = double.Parse(dr[2].ToString()),
-        //            cantidad = int.Parse(dr[3].ToString()),
-        //            foto = dr[4].ToString()
-        //        });
-        //    }
-        //    dr.Close();
-        //    cn.Close();
-        //    return aCarritoRam;
-        //}
-        //public ActionResult carritoComprasRam()
-        //{
-        //    if (Session["CarritoRam"] == null)
-        //    {
-        //        Session["carritoRam"] = new List<ItemRam>();
-        //    }
-        //    return View(listRamCarrito());
-        //}
+        ////carrito RAM
+        List<CarritoRam> listRamCarrito()
+        {
+            List<CarritoRam> aCarritoRam = new List<CarritoRam>();
+            SqlCommand cmd = new SqlCommand("SP_LISTACARRITORAM", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                aCarritoRam.Add(new CarritoRam()
+                {
+                    codigo = int.Parse(dr[0].ToString()),
+                    desc = dr[1].ToString(),
+                    precio = double.Parse(dr[2].ToString()),
+                    cantidad = int.Parse(dr[3].ToString()),
+                    foto = dr[4].ToString()
+                });
+            }
+            dr.Close();
+            cn.Close();
+            return aCarritoRam;
+        }
+        public ActionResult carritoComprasRam()
+        {
+            if (Session["CarritoRam"] == null)
+            {
+                Session["carritoRam"] = new List<ItemRam>();
+            }
+            return View(listRamCarrito());
+        }
 
-        //public ActionResult seleccionarProductoRam(int id)
-        //{
-        //    CarritoRam objR = listRamCarrito().Where(m => m.codigo == id).FirstOrDefault();
-        //    return View(objR);
-        //}
+        public ActionResult seleccionarProductoRam(int id)
+        {
+            CarritoRam objR = listRamCarrito().Where(m => m.codigo == id).FirstOrDefault();
+            return View(objR);
+        }
 
-        //public ActionResult agregarProductoRam(int id, int cant = 0)
-        //{
-        //    var miProductoRam = listRamCarrito().Where(m => m.codigo == id).FirstOrDefault();
+        public ActionResult agregarProductoRam(int id, int cant = 0)
+        {
+            var miProductoRam = listRamCarrito().Where(m => m.codigo == id).FirstOrDefault();
 
-        //    ItemRam objIM = new ItemRam()
-        //    {
-        //        codigo = miProductoRam.codigo,
-        //        desc = miProductoRam.desc,
-        //        precio = miProductoRam.precio,
-        //        cantidad = cant,
-        //        foto = miProductoRam.foto
-        //    };
+            ItemRam objIM = new ItemRam()
+            {
+                codigo = miProductoRam.codigo,
+                desc = miProductoRam.desc,
+                precio = miProductoRam.precio,
+                cantidad = cant,
+                foto = miProductoRam.foto
+            };
 
-        //    var miCarritoRam = (List<ItemRam>)Session["CarritoRam"];
-        //    miCarritoRam.Add(objIM);
-        //    Session["CarritoRam"] = miCarritoRam;
-        //    return RedirectToAction("carritoComprasRam");
-        //}
+            var miCarritoRam = (List<ItemRam>)Session["CarritoRam"];
+            miCarritoRam.Add(objIM);
+            Session["CarritoRam"] = miCarritoRam;
+            return RedirectToAction("carritoComprasRam");
+        }
 
-        //public ActionResult comprarRam()
-        //{
-        //    if (Session["CarritoRam"] == null)
-        //    {
-        //        return RedirectToAction("carritoComprasRam");
-        //    }
+        public ActionResult comprarRam()
+        {
+            if (Session["CarritoRam"] == null)
+            {
+                return RedirectToAction("carritoComprasRam");
+            }
 
-        //    var miCarritoRam = (List<ItemRam>)Session["CarritoRam"];
-        //    ViewBag.total = miCarritoRam.Sum(i => i.subTotal);
-        //    return View(miCarritoRam);
-        //}
+            var miCarritoRam = (List<ItemRam>)Session["CarritoRam"];
+            ViewBag.total = miCarritoRam.Sum(i => i.subTotal);
+            return View(miCarritoRam);
+        }
 
-        //public ActionResult eliminarItemRam(int id)
-        //{
-        //    var miCarritoRam = (List<ItemRam>)Session["CarritoRam"];
-        //    var miProductoRam = miCarritoRam.Where(i => i.codigo == id).FirstOrDefault();
-        //    miCarritoRam.Remove(miProductoRam);
+        public ActionResult eliminarItemRam(int id)
+        {
+            var miCarritoRam = (List<ItemRam>)Session["CarritoRam"];
+            var miProductoRam = miCarritoRam.Where(i => i.codigo == id).FirstOrDefault();
+            miCarritoRam.Remove(miProductoRam);
 
-        //    //Actualizar el Carrito con los nuevos registros
-        //    Session["CarritoRam"] = miCarritoRam;
-        //    return RedirectToAction("comprarRam");
-        //}
+            //Actualizar el Carrito con los nuevos registros
+            Session["CarritoRam"] = miCarritoRam;
+            return RedirectToAction("comprarRam");
+        }
 
-        //public ActionResult pagoRam()
-        //{
-        //    List<ItemRam> detalle = (List<ItemRam>)Session["CarritoRam"];
-        //    double total = 0;
-        //    foreach (ItemRam i in detalle)
-        //    {
-        //        total += i.subTotal;
-        //    }
+        public ActionResult pagoRam()
+        {
+            List<ItemRam> detalle = (List<ItemRam>)Session["CarritoRam"];
+            double total = 0;
+            foreach (ItemRam i in detalle)
+            {
+                total += i.subTotal;
+            }
 
-        //    ViewBag.total = total;
-        //    return View(detalle);
-        //}
+            ViewBag.total = total;
+            return View(detalle);
+        }
 
-        //public ActionResult FinalizarVentaRam(string dni, string nom)
-        //{
-        //    ViewBag.dni = dni;
-        //    ViewBag.nom = nom;
-        //    List<ItemRam> detalle = (List<ItemRam>)Session["CarritoRam"];
-        //    double total = 0;
-        //    foreach (ItemRam i in detalle)
-        //    {
-        //        total += i.subTotal;
-        //    }
+        public ActionResult FinalizarVentaRam(string dni, string nom)
+        {
+            ViewBag.dni = dni;
+            ViewBag.nom = nom;
+            List<ItemRam> detalle = (List<ItemRam>)Session["CarritoRam"];
+            double total = 0;
+            foreach (ItemRam i in detalle)
+            {
+                total += i.subTotal;
+            }
 
-        //    ViewBag.total = total;
-        //    return View();
+            ViewBag.total = total;
+            return View();
 
-        //}
+        }
 
-        //public ActionResult borrarSessionRam()
-        //{
-        //    Session["CarritoRam"] = null;
-        //    return RedirectToAction("Index");
-        //}
+        public ActionResult borrarSessionRam()
+        {
+            Session["CarritoRam"] = null;
+            return RedirectToAction("Index");
+        }
 
+        /// ///////////////***************////////////////////////
+
+
+        List<CarritoMobo> listMoboCarrito()
+        {
+            List<CarritoMobo> aMobos = new List<CarritoMobo>();
+            SqlCommand cmd = new SqlCommand("SP_LISTACARRITOMOBO", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                aMobos.Add(new CarritoMobo()
+                {
+                    codigo = int.Parse(dr[0].ToString()),
+                    desc = dr[1].ToString(),
+                    precio = double.Parse(dr[2].ToString()),
+                    cantidad = int.Parse(dr[3].ToString()),
+                    foto = dr[4].ToString()
+                });
+            }
+            dr.Close();
+            cn.Close();
+            return aMobos;
+        }
+
+        public ActionResult carritoComprasMobo()
+        {
+            if (Session["carritoMobo"] == null)
+            {
+                Session["carritoMobo"] = new List<ItemMotherboard>();
+            }
+            return View(listMoboCarrito());
+        }
+
+        public ActionResult seleccionarProductoMobo(int id)
+        {
+            CarritoMobo objC = listMoboCarrito().Where(p => p.codigo == id).FirstOrDefault();
+            return View(objC);
+        }
+
+        public ActionResult agregarProductoMobo(int id, int cant = 0)
+        {
+            var miProductoMobo = listMoboCarrito().Where(p => p.codigo == id).FirstOrDefault();
+
+            ItemMotherboard objI = new ItemMotherboard()
+            {
+                codigo = miProductoMobo.codigo,
+                nombre = miProductoMobo.desc,
+                precio = miProductoMobo.precio,
+                cantidad = cant,
+                foto = miProductoMobo.foto
+            };
+
+            var miCarritoMobo = (List<ItemMotherboard>)Session["carritoMobo"];
+            miCarritoMobo.Add(objI);
+            Session["carritoMobo"] = miCarritoMobo;
+            return RedirectToAction("carritoComprasMobo");
+        }
+
+        public ActionResult comprarMobo()
+        {
+            if (Session["carritoMobo"] == null)
+            {
+                return RedirectToAction("carritoComprasMobo");
+            }
+
+            var miCarritoMobo = (List<ItemMotherboard>)Session["carritoMobo"];
+            ViewBag.total = miCarritoMobo.Sum(i => i.subtotal);
+            return View(miCarritoMobo);
+        }
+
+        public ActionResult eliminarItemMobo(int id)
+        {
+            var miCarritoMobo = (List<ItemMotherboard>)Session["carritoMobo"];
+            var miProductoMobo = miCarritoMobo.Where(i => i.codigo == id).FirstOrDefault();
+            miCarritoMobo.Remove(miProductoMobo);
+
+            //Actualizar el Carrito con los nuevos registros
+            Session["carritoMobo"] = miCarritoMobo;
+            return RedirectToAction("comprarMobo");
+        }
+
+        public ActionResult pagoMobo()
+        {
+            List<ItemMotherboard> detalle = (List<ItemMotherboard>)Session["carritoMobo"];
+            double total = 0;
+            foreach (ItemMotherboard i in detalle)
+            {
+                total += i.subtotal;
+            }
+
+            ViewBag.total = total;
+            return View(detalle);
+        }
+
+        public ActionResult FinalizarVentaMobo(string dni, string nom)
+        {
+            ViewBag.dni = dni;
+            ViewBag.nom = nom;
+            List<ItemMotherboard> detalle = (List<ItemMotherboard>)Session["carritoMobo"];
+            double total = 0;
+            foreach (ItemMotherboard i in detalle)
+            {
+                total += i.subtotal;
+            }
+
+            ViewBag.total = total;
+            return View();
+
+        }
+
+        public ActionResult borrarSessionMobo()
+        {
+            Session["carritoMobo"] = null;
+            return RedirectToAction("Index");
+        }
 
     }
 }

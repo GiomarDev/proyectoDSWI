@@ -1,0 +1,99 @@
+﻿@model Proyecto.Models.MonitorA
+
+@{
+    ViewBag.Title = "detalleMonitor";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<h2>detalleMonitor</h2>
+
+<div>
+    <h4>MonitorA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proveedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.frec_monitor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.frec_monitor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uex_pro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uex_pro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.upe_pro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.upe_pro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.foto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.foto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "listadoMonitor")
+</p>

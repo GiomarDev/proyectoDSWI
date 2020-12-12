@@ -1,0 +1,91 @@
+﻿@model Proyecto.Models.MotherboardA
+
+@{
+    ViewBag.Title = "detalleMobo";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<h2>DETALLE MOTHERBOARD</h2>
+
+<div>
+    <h4>MotherboardA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_prov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_prov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_marca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_categ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_categ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.upe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.upe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.foto)
+        </dt>
+
+        <dd>
+            <img class="imgPro" src="@Url.Content(Model.foto)" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

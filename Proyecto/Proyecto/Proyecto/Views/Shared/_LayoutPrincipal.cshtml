@@ -78,11 +78,10 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown pr-4 border ">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">VENTA <span class="caret"></span></a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">GPU<span class="caret"></span></a>
                         <div class="dropdown-menu border " aria-labelledby="dropdown_target">
-                            <a>@Html.ActionLink("GENERAR VENTA", "carritoCompras", "Tienda", new { @class = "dropdown-item text-dark" })</a>
-                            <a class="dropdown-item">LISTADO DE FACTURAS</a>
-                            <a class="dropdown-item">submenu 3</a>
+                            <a class="dropdown-item">@Html.ActionLink("LISTA DE GPU", "listadoGPU", "GPU")</a>
+                            <a class="dropdown-item">@Html.ActionLink("REGISTRAR GPU", "nuevaMonitor", "GPU")</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown pr-4 border ">

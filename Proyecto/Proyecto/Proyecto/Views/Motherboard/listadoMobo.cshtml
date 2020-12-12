@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Proyecto.Models.MotherboardA>
+
+@{
+    ViewBag.Title = "listadoMobo";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<h2>LISTADO MOTHERBOARD</h2>
+
+<p>
+    @Html.ActionLink("REGISTRAR", "nuevaMobo")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_prov)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_categ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.uex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.upe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.codigo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.id_prov)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.id_marca)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.id_categ)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.precio)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.uex)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.upe)
+    </td>
+    <td>
+        <img class="imgArt" src="@Url.Content(item.foto)" />
+    </td>
+    <td>
+        @Html.ActionLink("Modificar", "modificaMobo", new { id = item.codigo }) |
+        @Html.ActionLink("Detalle", "detalleMobo", new { id = item.codigo }) |
+        @Html.ActionLink("Eliminar", "eliminarMobo", new { id = item.codigo })
+    </td>
+</tr>
+}
+
+</table>

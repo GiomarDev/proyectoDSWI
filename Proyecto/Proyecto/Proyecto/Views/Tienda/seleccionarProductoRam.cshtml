@@ -1,0 +1,27 @@
+﻿@model Proyecto.Models.CarritoRam
+
+@{
+    ViewBag.Title = "seleccionarProductoRam";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<h2>PROCESO DE SELECCION PRODUCTO</h2>
+@Html.Partial("_PartialRegistroRam")
+
+<section id="columna2">
+    <section class="panel-primary">
+        <section class="panel-heading">
+            INGRESE CANTIDAD:
+        </section>
+        <section class="panel-body">
+            @using (Html.BeginForm("agregarProductoRam", "Tienda"))
+            {
+                @Html.Hidden("id", Model.codigo, new { @class = "form-control" });
+                @Html.TextBox("cant", "", new { @class = "form-control" })
+                @Html.ActionLink("Cancelar", "carritoComprasRam", "", new { @class = "btn btn-danger" })
+                <input type="submit" value="Aceptar" class="btn btn-success" />
+            }
+        </section>
+    </section>
+
+</section>

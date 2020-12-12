@@ -39,8 +39,6 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
-<part id="2"/>
-<part id="3"/>
 </presentation>
 </folder>
 </info>
@@ -147,8 +145,8 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info part="com.ibm.xtools.reqpro.ui.internal.views.explorer.RequirementExplorer" ratio="0.1974856" ratioLeft="377" ratioRight="1532" relationship="2" relative="projectExplorerArea"/>
-<info folder="true" part="underEditorArea" ratio="0.80680573" ratioLeft="735" ratioRight="176" relationship="4" relative="com.ibm.xtools.reqpro.ui.internal.views.explorer.RequirementExplorer">
+<info part="com.ibm.xtools.reqpro.ui.internal.views.explorer.RequirementExplorer" ratio="0.09952855" ratioLeft="190" ratioRight="1719" relationship="2" relative="projectExplorerArea"/>
+<info folder="true" part="underEditorArea" ratio="0.83424807" ratioLeft="760" ratioRight="151" relationship="4" relative="com.ibm.xtools.reqpro.ui.internal.views.explorer.RequirementExplorer">
 <folder activePageID="org.eclipse.ui.views.PropertySheet" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
 <page content="com.ibm.etools.common.migration.view.MigrationValidationResultsView" label="Migration Results"/>
